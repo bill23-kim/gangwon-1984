@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="1984년생 동창 6명의 2026년 10월 16~17일 강원도 고성 1박 2일 일정표">
+<meta name="theme-color" content="#0b0c10">
+<link rel="preload" href="Galmuri11.woff2" as="font" type="font/woff2" crossorigin>
+<title>설악 원정 1984</title>
+<style>
+:root{
+  --bg:#0b0c10; --ink:#b9bec7; --bright:#f3f4f6; --dim:#646a77; --frame:#8b909b;
+  --amber:#ffd15c; --cyan:#62d6df; --green:#71dd7c; --red:#ff6f6f; --magenta:#d99ae6;
+  --tv-bar:#a9adb5; --tv-hot:#a40000; --car-a:var(--cyan); --car-b:var(--magenta);
+  --font:'Galmuri11','Nanum Gothic Coding',Menlo,Consolas,monospace;
+  color-scheme:dark;
+}
+html{background:var(--bg);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--font);padding-block:0 56px;padding-inline:16px;min-height:100%;word-break:keep-all;overflow-wrap:anywhere}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:8;background:radial-gradient(ellipse at center,transparent 62%,rgba(0,0,0,.38))}
+::selection{background:var(--amber);color:#000}
+a{color:var(--cyan);text-decoration:none}
+a:hover,a:focus-visible{background:var(--cyan);color:#000;outline:0}
+:focus-visible{outline:1px dashed var(--amber);outline-offset:2px}
+
+/* menu bar (Norton Commander / Turbo Vision) */
+.menubar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--tv-bar);color:#111;margin:0 -16px;padding-inline:16px}
+.menubar .in{max-width:880px;margin:0 auto;display:flex;align-items:center;flex-wrap:wrap}
+.menubar .brand{padding:4px 12px 4px 0;color:#111}
+.menubar a{color:#111;padding:4px 12px;white-space:nowrap}
+.menubar a b{color:var(--tv-hot);font-weight:400}
+.menubar a:hover,.menubar a:focus-visible{background:#111;color:var(--tv-bar)}
+.menubar a:hover b,.menubar a:focus-visible b{color:var(--amber)}
+.menubar .clock{margin-left:auto;padding:4px 0;font-variant-numeric:tabular-nums}
+
+.screen{max-width:880px;margin:0 auto;display:grid;gap:30px;padding-top:22px}
+
+/* boot + banner */
+.boot{margin:0;white-space:pre-wrap;color:var(--ink);font:inherit;min-height:7.5em}
+.boot.typing::after{content:"_";animation:blink .6s steps(1) infinite}
+.banner{display:grid;gap:8px;padding:6px 0 2px}
+.banner .shade{color:var(--frame);letter-spacing:0}
+.banner h1{margin:0;font-size:33px;line-height:1.2;font-weight:400;color:var(--amber);text-wrap:balance}
+.banner .sub{margin:4px 0 0;color:var(--ink)}
+.banner .sub em{font-style:normal;color:var(--bright)}
+
+/* window */
+.win{position:relative;border:3px double var(--frame);padding:24px 18px 18px;scroll-margin-top:60px}
+.win-title{position:absolute;top:-13px;left:14px;margin:0;background:var(--bg);padding:0 8px;font-size:16px;font-weight:400;color:var(--amber);letter-spacing:.06em}
+.win-title::before{content:"[■] ";color:var(--green)}
+.win::after{content:"[↕]";position:absolute;top:-13px;right:14px;background:var(--bg);padding:0 6px;color:var(--frame)}
+.win p{margin:0}
+.dimtxt{color:var(--dim)}
+
+/* mission key/value */
+.kv{display:grid;grid-template-columns:5.5em 1fr;gap:8px 16px;margin:0}
+.kv dt{color:var(--dim)}
+.kv dd{margin:0;color:var(--bright)}
+.kv dd small{display:block;font-size:inherit;color:var(--ink)}
+.kv .dday{color:var(--amber)}
+
+/* roster */
+.cars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.car{border:1px solid var(--frame);padding:14px 16px;display:grid;gap:10px}
+.car h3{margin:0;font-size:16px;font-weight:400;letter-spacing:.04em}
+.car.a h3{color:var(--car-a)} .car.b h3{color:var(--car-b)}
+.car ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.car li{display:grid;grid-template-columns:3.2em 1fr;gap:10px;color:var(--bright)}
+.car .tag{color:var(--dim)}
+.car.a .drv{color:var(--car-a)} .car.b .drv{color:var(--car-b)}
+.car .route{color:var(--ink);border-top:1px dotted var(--dim);padding-top:8px}
+i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:4.6em 1fr;gap:2px 14px;padding:10px 0;border-top:1px dotted var(--dim)}
+.tl li:first-child{border-top:0;padding-top:0}
+.tl li:last-child{padding-bottom:0}
+.tl time{color:var(--cyan);font-variant-numeric:tabular-nums}
+.tl .ev{color:var(--bright)}
+.tl .memo{grid-column:2;color:var(--ink)}
+.tl .memo::before{content:"└ ";color:var(--dim)}
+.tip{margin-top:16px;padding-top:12px;border-top:1px dotted var(--dim);color:var(--ink)}
+.tip b{font-weight:400;color:var(--amber)}
+
+/* checklist */
+.chk-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.chk{list-style:none;margin:0;padding:0}
+.chk button{background:none;border:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border-radius:0;color:var(--bright);font:inherit;text-align:left;padding:7px 0;width:100%;cursor:pointer;display:grid;grid-template-columns:2.2em 1fr;gap:8px;border-top:1px dotted var(--dim)}
+.chk li:first-child button{border-top:0}
+.chk .box{color:var(--amber)}
+.chk button[aria-pressed="true"]{color:var(--dim);text-decoration:line-through}
+.chk button[aria-pressed="true"] .box{color:var(--green);text-decoration:none}
+.prog{color:var(--green)}
+
+/* dir listing */
+.dirhead{margin:0 0 6px;white-space:pre-wrap;color:var(--dim);font:inherit}
+.dir{list-style:none;margin:0;padding:0}
+.dir li{display:grid;grid-template-columns:1fr auto;gap:0 12px;padding:8px 0;border-top:1px dotted var(--dim)}
+.dir .nm{color:var(--bright)}
+.dir .ad,.dir .hr{grid-column:1/-1;color:var(--dim)}
+.dir .hr{color:var(--ink)}
+.dir .alt .nm{color:var(--ink)}
+
+.prompt{margin-top:10px}
+.prompt .line{color:var(--bright)}
+.cursor{animation:blink 1s steps(1) infinite;color:var(--bright)}
+.prompt .meta{margin:10px 0 0;color:var(--dim)}
+@keyframes blink{50%{opacity:0}}
+
+@media (max-width:560px){
+  body{font-size:15px}
+  .banner h1{font-size:22px}
+  .menubar .brand,.menubar .clock{display:none}
+  .menubar .in{justify-content:center}
+  .menubar a{padding:4px 5px;font-size:14px}
+  .win{padding:22px 12px 14px}
+  .kv{grid-template-columns:4.6em 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  .cursor,.boot.typing::after{animation:none}
+}
+</style>
+<style>
+@font-face{font-family:'Galmuri11';font-style:normal;font-weight:400;font-display:block;src:url(Galmuri11.woff2) format('woff2')}
+</style>
+</head>
+<body>
+<nav class="menubar" aria-label="바로가기">
+  <div class="in">
+    <span class="brand">GANGWON.EXE</span>
+    <a href="#mission" data-key="1"><b>1</b> 개요</a>
+    <a href="#roster" data-key="2"><b>2</b> 인원</a>
+    <a href="#day1" data-key="3"><b>3</b> 1일차</a>
+    <a href="#day2" data-key="4"><b>4</b> 2일차</a>
+    <a href="#check" data-key="5"><b>5</b> 체크</a>
+    <a href="#places" data-key="6"><b>6</b> 장소</a>
+    <span class="clock" id="clock" aria-hidden="true"></span>
+  </div>
+</nav>
+
+<main class="screen">
+
+<pre class="boot" id="boot">Starting MS-DOS...
+
+HIMEM is testing extended memory...done.
+C:\>cd GANGWON
+C:\GANGWON>type PLAN.TXT</pre>
+
+<header class="banner">
+  <div class="shade">░▒▓█▓▒░</div>
+  <h1>설악 원정 1984</h1>
+  <p class="sub"><em>1984년생 고교 동창 6명</em> · 강원도 고성 1박 2일 · <em>2026.10.16 (금) → 10.17 (토)</em></p>
+</header>
+
+<section class="win" id="mission" aria-labelledby="t-mission">
+  <h2 class="win-title" id="t-mission">MISSION.TXT</h2>
+  <dl class="kv">
+    <dt>일자</dt><dd>2026.10.16 (금) ~ 10.17 (토) · 1박 2일</dd>
+    <dt>남은 날</dt><dd class="dday" id="dday">D-25</dd>
+    <dt>집결</dt><dd>내린천휴게소 10:40<small>서울양양고속도로 양양 방향. 두 차가 여기서 만나 함께 이동</small></dd>
+    <dt>본부</dt><dd>켄싱턴리조트 설악밸리 · 노블리안 루체른<small>테라스가든뷰 36평 단독형 · 체크인 15:00 / 체크아웃 11:00</small><small>강원특별자치도 고성군 토성면 신평골길 8-25</small></dd>
+    <dt>인원</dt><dd>6명 · 차량 2대 (<i class="a">하남호</i> / <i class="b">판교호</i>)</dd>
+    <dt>복귀</dt><dd>2일차 점심 후 13:00 출발 · 15:30 도착 예정</dd>
+  </dl>
+</section>
+
+<section class="win" id="roster" aria-labelledby="t-roster">
+  <h2 class="win-title" id="t-roster">ROSTER.DAT</h2>
+  <div class="cars">
+    <article class="car a">
+      <h3>CAR-A · 하남호</h3>
+      <ul>
+        <li><span class="tag drv">DRV</span><span>영생</span></li>
+        <li><span class="tag">PAX</span><span>용동</span></li>
+        <li><span class="tag">PAX</span><span>영감</span></li>
+      </ul>
+      <p class="route">하남 09:00 출발 → 내린천휴게소 10:40</p>
+    </article>
+    <article class="car b">
+      <h3>CAR-B · 판교호</h3>
+      <ul>
+        <li><span class="tag drv">DRV</span><span>은수</span></li>
+        <li><span class="tag">PAX</span><span>도추</span></li>
+        <li><span class="tag">PAX</span><span>육년</span></li>
+      </ul>
+      <p class="route">판교 09:00 출발 → 내린천휴게소 10:40</p>
+    </article>
+  </div>
+</section>
+
+<section class="win" id="day1" aria-labelledby="t-day1">
+  <h2 class="win-title" id="t-day1">DAY1.BAT · 10.16 금</h2>
+  <ol class="tl">
+    <li><time>09:00</time><span class="ev"><i class="a">하남호</i> · <i class="b">판교호</i> 동시 출발</span><span class="memo">서울양양고속도로. 각자 내비 따라 이동</span></li>
+    <li><time>10:40</time><span class="ev">내린천휴게소 합류</span><span class="memo">고속도로 위에 떠 있는 휴게소. 15분 쉬고 함께 출발</span></li>
+    <li><time>11:45</time><span class="ev">백촌막국수</span><span class="memo">먼저 도착한 차가 테이블링 앱으로 6명 대기 등록. 메밀국수 + 편육</span></li>
+    <li><time>13:30</time><span class="ev">천진해변 · 글라스하우스</span><span class="memo">서핑숍 겸 카페. 커피나 맥주 한 잔, 해변 산책</span></li>
+    <li><time>14:30</time><span class="ev">속초 중앙시장 장보기</span><span class="memo">닭강정, 저녁 고기, 술, 얼음, 아침 라면</span></li>
+    <li><time>15:30</time><span class="ev">켄싱턴 설악밸리 체크인</span><span class="memo">노블리안 루체른 · 짐 풀고 한숨</span></li>
+    <li><time>16:00</time><span class="ev">자유시간</span><span class="memo">리조트 산책, 낮잠, 족구든 뭐든</span></li>
+    <li><time>18:00</time><span class="ev">테라스 바베큐</span><span class="memo">바베큐 불가 시 학사평 순두부마을로 대체</span></li>
+    <li><time>20:30</time><span class="ev">레트로 나이트</span><span class="memo">2000~2002 플레이리스트, 야식 닭강정, 술게임</span></li>
+  </ol>
+  <p class="tip"><b>* 백촌막국수 대기</b> 평일에도 2~3시간 줄이 서는 곳. 금요일 11시 반 전 도착이 핵심. 대기가 2시간 넘으면 근처 동루골막국수로 전환.</p>
+</section>
+
+<section class="win" id="day2" aria-labelledby="t-day2">
+  <h2 class="win-title" id="t-day2">DAY2.BAT · 10.17 토</h2>
+  <ol class="tl">
+    <li><time>08:00</time><span class="ev">라면 아침 · 짐 정리</span><span class="memo">객실 주방 사용</span></li>
+    <li><time>09:00</time><span class="ev">체크아웃 · 설악산 소공원 이동</span><span class="memo">리조트에서 10분. 정식 체크아웃은 11시지만 일찍 나가는 게 유리</span></li>
+    <li><time>09:20</time><span class="ev">권금성 케이블카</span><span class="memo">왕복 15,000원 · 현장 구매만 가능 · 오전 9~11시가 한산하고 전망도 좋음</span></li>
+    <li><time>11:30</time><span class="ev">봉포머구리집 고성점 · 물회</span><span class="memo">글라스하우스 바로 맞은편. 토요일 점심이라 11시 반 도착 목표</span></li>
+    <li><time>13:00</time><span class="ev">귀가 출발</span><span class="memo">토요일 오후 서울 방향 정체 전에 빠져나옴</span></li>
+    <li><time>15:30</time><span class="ev">하남 · 판교 도착 예정</span></li>
+  </ol>
+  <p class="tip"><b>* 단풍</b> 설악산 단풍 절정이 10월 중순. 딱 이 주말이다.</p>
+</section>
+
+<section class="win" id="check" aria-labelledby="t-check">
+  <h2 class="win-title" id="t-check">CHECKLST.TXT</h2>
+  <div class="chk-head"><p class="dimtxt">출발 전 확인. 누르면 체크되고 이 브라우저에만 저장됨</p><p class="prog" id="prog">완료 0 / 8</p></div>
+  <ul class="chk" id="chk">
+    <li><button type="button" id="c-bbq" aria-pressed="false"><span class="box">[ ]</span><span>리조트에 테라스 바베큐 가능 여부, 그릴 대여 문의 (켄싱턴 통합예약 1588-9337)</span></button></li>
+    <li><button type="button" id="c-pax" aria-pressed="false"><span class="box">[ ]</span><span>36평 6인 투숙 기준 인원 확인</span></button></li>
+    <li><button type="button" id="c-tabling" aria-pressed="false"><span class="box">[ ]</span><span>테이블링 앱 설치 (백촌막국수 대기용, 한 명만 있어도 됨)</span></button></li>
+    <li><button type="button" id="c-treasurer" aria-pressed="false"><span class="box">[ ]</span><span>총무 1명 지정 · 숙소, 장보기, 톨비 정산</span></button></li>
+    <li><button type="button" id="c-loc" aria-pressed="false"><span class="box">[ ]</span><span>단톡 위치공유 켜기 (두 차 합류용)</span></button></li>
+    <li><button type="button" id="c-hipass" aria-pressed="false"><span class="box">[ ]</span><span>하이패스 잔액 확인 · 차량 2대</span></button></li>
+    <li><button type="button" id="c-shop" aria-pressed="false"><span class="box">[ ]</span><span>장보기 리스트 확정 · 고기, 숯, 술, 얼음, 라면, 종이컵</span></button></li>
+    <li><button type="button" id="c-music" aria-pressed="false"><span class="box">[ ]</span><span>2000~2002 플레이리스트 만들기</span></button></li>
+  </ul>
+</section>
+
+<section class="win" id="places" aria-labelledby="t-places">
+  <h2 class="win-title" id="t-places">PLACES.DIR</h2>
+<pre class="dirhead"> Volume in drive C is GANGWON
+ Directory of C:\GANGWON\PLACES</pre>
+  <ul class="dir">
+    <li><span class="nm">내린천휴게소</span><a href="https://map.naver.com/p/search/내린천휴게소" target="_blank" rel="noopener">[지도]</a><span class="ad">인제군 기린면 · 서울양양고속도로 양양 방향</span></li>
+    <li><span class="nm">백촌막국수</span><a href="https://map.naver.com/p/search/백촌막국수" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 백촌1길 10</span><span class="hr">10:30~17:30 · 수요일 휴무 · 테이블링 대기</span></li>
+    <li class="alt"><span class="nm">동루골막국수 (대체)</span><a href="https://map.naver.com/p/search/동루골막국수" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 · 백촌막국수 인근</span></li>
+    <li><span class="nm">글라스하우스</span><a href="https://map.naver.com/p/search/고성 글라스하우스" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 천진해변길 43</span><span class="hr">서핑숍 겸 카페 · 천진해변 주차장 이용</span></li>
+    <li><span class="nm">봉포머구리집 고성점</span><a href="https://map.naver.com/p/search/봉포머구리집 고성점" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 천진해변길 46</span><span class="hr">10:00~21:00 · 수요일 휴무</span></li>
+    <li><span class="nm">속초 중앙시장</span><a href="https://map.naver.com/p/search/속초관광수산시장" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 중앙로147번길 12</span><span class="hr">닭강정 · 술안주 · 장보기</span></li>
+    <li><span class="nm">켄싱턴리조트 설악밸리</span><a href="https://map.naver.com/p/search/켄싱턴리조트 설악밸리" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 신평골길 8-25</span><span class="hr">체크인 15:00 · 체크아웃 11:00</span></li>
+    <li><span class="nm">설악산 소공원 · 권금성 케이블카</span><a href="https://map.naver.com/p/search/설악산 케이블카" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 설악산로 1085</span><span class="hr">왕복 15,000원 · 현장 구매</span></li>
+    <li class="alt"><span class="nm">학사평 순두부마을 (대체 저녁)</span><a href="https://map.naver.com/p/search/학사평 순두부마을" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 학사평 일대 · 리조트에서 10분</span></li>
+  </ul>
+</section>
+
+<footer class="prompt">
+  <div class="line">C:\GANGWON><span class="cursor">_</span></div>
+  <p class="meta">REV 1 · 2026.09.21 · 일정이 바뀌면 이 주소 그대로 갱신됩니다</p>
+</footer>
+
+</main>
+
+<script>
+(function(){
+  var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // boot typewriter
+  var pre = document.getElementById('boot'), full = pre.textContent;
+  if(!rm){
+    pre.textContent=''; pre.classList.add('typing'); var i=0;
+    (function t(){ pre.textContent = full.slice(0, ++i);
+      if(i < full.length) setTimeout(t, full[i-1]==='\n' ? 160 : 18); else pre.classList.remove('typing'); })();
+  }
+
+  // D-day
+  var today = new Date(); today.setHours(0,0,0,0);
+  var n = Math.round((new Date(2026,9,16) - today) / 864e5);
+  document.getElementById('dday').textContent = n>0 ? 'D-'+n : n===0 ? 'D-DAY' : n===-1 ? '2일차 진행 중' : '종료 · '+(-n)+'일 경과';
+
+  // clock
+  var ck = document.getElementById('clock');
+  function tick(){ var d=new Date(); ck.textContent = [d.getHours(),d.getMinutes(),d.getSeconds()].map(function(x){return (x<10?'0':'')+x}).join(':'); }
+  tick(); setInterval(tick, 1000);
+
+  // checklist, per-browser only
+  var KEY='gw1984-chk', st={};
+  try{ st = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; }catch(e){}
+  var btns = [].slice.call(document.querySelectorAll('#chk button'));
+  function paint(){ var done=0; btns.forEach(function(b){ var on=!!st[b.id]; b.setAttribute('aria-pressed', on); b.querySelector('.box').textContent = on?'[X]':'[ ]'; if(on) done++; });
+    document.getElementById('prog').textContent = '완료 '+done+' / '+btns.length; }
+  btns.forEach(function(b){ b.addEventListener('click', function(){ st[b.id]=!st[b.id]; try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){} paint(); }); });
+  paint();
+
+  // number keys 1-6 jump to sections
+  document.addEventListener('keydown', function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    var a = document.querySelector('.menubar a[data-key="'+e.key+'"]'); if(!a) return;
+    var el = document.querySelector(a.getAttribute('href')); if(!el) return;
+    e.preventDefault(); el.scrollIntoView({behavior: rm?'auto':'smooth', block:'start'});
+  });
+})();
+</script>
+</body>
+</html>
