@@ -1,103 +1,114 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" data-skin="dos">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="1984년생 동창 6명의 2026년 10월 16~17일 강원도 고성 1박 2일 일정표">
 <meta name="theme-color" content="#0b0c10">
-<link rel="preload" href="Galmuri11.woff2" as="font" type="font/woff2" crossorigin>
 <title>설악 원정 1984</title>
+<script>(function(){var k=null;try{k=new URLSearchParams(location.search).get('skin')||localStorage.getItem('gw1984-skin')}catch(e){}var ok=['dos','hitel','win98','book','gallery','midnight'];document.documentElement.dataset.skin=ok.indexOf(k)>-1?k:'dos'})()</script>
+<link rel="preload" href="Galmuri11.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&display=swap">
 <style>
+@font-face{font-family:'Galmuri11';font-style:normal;font-weight:400;font-display:block;src:url(Galmuri11.woff2) format('woff2')}
+
+/* ── tokens: MS-DOS is the base ─────────────────────────────── */
 :root{
-  --bg:#0b0c10; --ink:#b9bec7; --bright:#f3f4f6; --dim:#646a77; --frame:#8b909b;
-  --amber:#ffd15c; --cyan:#62d6df; --green:#71dd7c; --red:#ff6f6f; --magenta:#d99ae6;
-  --tv-bar:#a9adb5; --tv-hot:#a40000; --car-a:var(--cyan); --car-b:var(--magenta);
-  --font:'Galmuri11','Nanum Gothic Coding',Menlo,Consolas,monospace;
+  --bg:#0b0c10; --surface:#0b0c10; --ink:#b9bec7; --bright:#f3f4f6; --dim:#646a77; --frame:#8b909b;
+  --accent:#ffd15c; --link:#62d6df; --ok:#71dd7c; --car-a:#62d6df; --car-b:#d99ae6;
+  --bar-bg:#a9adb5; --bar-fg:#111; --bar-hot:#a40000;
+  --font:'Galmuri11','Nanum Gothic Coding',Menlo,Consolas,monospace; --font-memo:var(--font); --font-head:var(--font);
+  --fs:16px; --lh:1.5; --radius:0; --sep:1px dotted var(--dim);
   color-scheme:dark;
 }
-html{background:var(--bg);-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 var(--font);padding-block:0 56px;padding-inline:16px;min-height:100%;word-break:keep-all;overflow-wrap:anywhere}
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px)}
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:8;background:radial-gradient(ellipse at center,transparent 62%,rgba(0,0,0,.38))}
-::selection{background:var(--amber);color:#000}
-a{color:var(--cyan);text-decoration:none}
-a:hover,a:focus-visible{background:var(--cyan);color:#000;outline:0}
-:focus-visible{outline:1px dashed var(--amber);outline-offset:2px}
+:root[data-skin="hitel"]{--bg:#0e1f9e;--surface:#0e1f9e;--ink:#dfe3ff;--bright:#fff;--dim:#8f98e6;--frame:#aab3ff;--accent:#ffe26a;--link:#7ff0ff;--ok:#8dff9a;--car-a:#7ff0ff;--car-b:#ffb3f5;--bar-bg:#ffe26a;--bar-fg:#101a60;--bar-hot:#c0392b}
+:root[data-skin="win98"]{--bg:#008080;--surface:#c0c0c0;--ink:#eaf6f6;--bright:#fff;--dim:#cfe8e8;--frame:#808080;--accent:#fff;--link:#000080;--ok:#008000;--car-a:#000080;--car-b:#800080;--bar-bg:#c0c0c0;--bar-fg:#000;--bar-hot:#000;--sep:1px solid #808080;color-scheme:light}
+:root[data-skin="book"]{--bg:#f6f3ea;--surface:#f6f3ea;--ink:#2a2a2a;--bright:#111;--dim:#7a7568;--frame:#1a1a1a;--accent:#d43d2a;--link:#1d3a8a;--ok:#1d3a8a;--car-a:#1d3a8a;--car-b:#d43d2a;--bar-bg:#f6f3ea;--bar-fg:#111;--bar-hot:#d43d2a;--font:'Nanum Myeongjo',serif;--font-memo:'Nanum Pen Script',cursive;--font-head:'Nanum Myeongjo',serif;--fs:17px;--lh:1.75;--sep:1px solid #d9d3c4;color-scheme:light}
+:root[data-skin="gallery"]{--bg:#f4f5f7;--surface:#fff;--ink:#2b2f36;--bright:#111318;--dim:#7a808c;--frame:#e4e7ec;--accent:#0e7c86;--link:#0e7c86;--ok:#15803d;--car-a:#0e7c86;--car-b:#c2410c;--bar-bg:rgba(255,255,255,.86);--bar-fg:#111318;--bar-hot:#7a808c;--font:'IBM Plex Sans KR',system-ui,-apple-system,sans-serif;--font-memo:var(--font);--font-head:var(--font);--lh:1.6;--radius:14px;--sep:1px solid var(--frame);color-scheme:light}
+:root[data-skin="midnight"]{--bg:#0f1218;--surface:#171b24;--ink:#c9cfda;--bright:#f4f6fa;--dim:#7d8595;--frame:rgba(255,255,255,.09);--accent:#ff8c66;--link:#7cc4ff;--ok:#4ade80;--car-a:#7cc4ff;--car-b:#ff8c66;--bar-bg:rgba(15,18,24,.82);--bar-fg:#f4f6fa;--bar-hot:#7d8595;--font:'IBM Plex Sans KR',system-ui,-apple-system,sans-serif;--font-memo:var(--font);--font-head:var(--font);--lh:1.6;--radius:14px;--sep:1px solid var(--frame)}
 
-/* menu bar (Norton Commander / Turbo Vision) */
-.menubar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--tv-bar);color:#111;margin:0 -16px;padding-inline:16px}
+/* ── base structure ─────────────────────────────────────────── */
+html{background:var(--bg);-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:var(--fs)/var(--lh) var(--font);padding-block:0 56px;padding-inline:16px;min-height:100%;word-break:keep-all;overflow-wrap:anywhere}
+[data-skin="dos"] body::before,[data-skin="hitel"] body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:9;background:repeating-linear-gradient(0deg,rgba(0,0,0,.16) 0 1px,transparent 1px 3px)}
+[data-skin="dos"] body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:8;background:radial-gradient(ellipse at center,transparent 62%,rgba(0,0,0,.38))}
+[data-skin="midnight"] body{background:radial-gradient(900px 420px at 15% -10%,rgba(255,140,102,.13),transparent 70%),var(--bg)}
+::selection{background:var(--accent);color:#000}
+a{color:var(--link);text-decoration:none}
+a:hover,a:focus-visible{background:var(--link);color:#000;outline:0}
+:focus-visible{outline:1px dashed var(--accent);outline-offset:2px}
+
+.menubar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bar-bg);color:var(--bar-fg);margin:0 -16px;padding-inline:16px}
 .menubar .in{max-width:880px;margin:0 auto;display:flex;align-items:center;flex-wrap:wrap}
-.menubar .brand{padding:4px 12px 4px 0;color:#111}
-.menubar a{color:#111;padding:4px 12px;white-space:nowrap}
-.menubar a b{color:var(--tv-hot);font-weight:400}
-.menubar a:hover,.menubar a:focus-visible{background:#111;color:var(--tv-bar)}
-.menubar a:hover b,.menubar a:focus-visible b{color:var(--amber)}
-.menubar .clock{margin-left:auto;padding:4px 0;font-variant-numeric:tabular-nums}
+.menubar .brand{padding:4px 12px 4px 0}
+.menubar a{color:var(--bar-fg);padding:4px 12px;white-space:nowrap}
+.menubar a b{color:var(--bar-hot);font-weight:400}
+.menubar a:hover,.menubar a:focus-visible{background:var(--bar-fg);color:var(--bar-bg)}
+.menubar a:hover b,.menubar a:focus-visible b{color:var(--accent)}
+.skin{display:flex;align-items:center;gap:6px;margin-left:auto;padding:3px 0}
+.skin-lab{font-size:.85em;letter-spacing:.08em}
+#skin{font:inherit;font-size:.9em;background:transparent;color:inherit;border:1px solid currentColor;padding:2px 6px;border-radius:calc(var(--radius) / 2);max-width:9em}
+#skin option{color:#000;background:#fff}
+.menubar .clock{padding:4px 0 4px 14px;font-variant-numeric:tabular-nums}
 
 .screen{max-width:880px;margin:0 auto;display:grid;gap:30px;padding-top:22px}
 
-/* boot + banner */
 .boot{margin:0;white-space:pre-wrap;color:var(--ink);font:inherit;min-height:7.5em}
 .boot.typing::after{content:"_";animation:blink .6s steps(1) infinite}
+:root:not([data-skin="dos"]) .boot-dos,:root:not([data-skin="hitel"]) .boot-hitel{display:none}
 .banner{display:grid;gap:8px;padding:6px 0 2px}
-.banner .shade{color:var(--frame);letter-spacing:0}
-.banner h1{margin:0;font-size:33px;line-height:1.2;font-weight:400;color:var(--amber);text-wrap:balance}
+.banner .shade{color:var(--frame)}
+.banner h1{margin:0;font:400 33px/1.2 var(--font-head);color:var(--accent);text-wrap:balance}
 .banner .sub{margin:4px 0 0;color:var(--ink)}
 .banner .sub em{font-style:normal;color:var(--bright)}
 
-/* window */
-.win{position:relative;border:3px double var(--frame);padding:24px 18px 18px;scroll-margin-top:60px}
-.win-title{position:absolute;top:-13px;left:14px;margin:0;background:var(--bg);padding:0 8px;font-size:16px;font-weight:400;color:var(--amber);letter-spacing:.06em}
-.win-title::before{content:"[■] ";color:var(--green)}
-.win::after{content:"[↕]";position:absolute;top:-13px;right:14px;background:var(--bg);padding:0 6px;color:var(--frame)}
+.win{position:relative;border:3px double var(--frame);padding:24px 18px 18px;scroll-margin-top:60px;background:var(--surface);border-radius:var(--radius)}
+.win-title{position:absolute;top:-13px;left:14px;margin:0;background:var(--surface);padding:0 8px;font:400 16px/1.5 var(--font-head);color:var(--accent);letter-spacing:.06em}
+.win-title::before{content:"[■] ";color:var(--ok)}
+.win::after{content:"[↕]";position:absolute;top:-13px;right:14px;background:var(--surface);padding:0 6px;color:var(--frame)}
 .win p{margin:0}
 .dimtxt{color:var(--dim)}
 
-/* mission key/value */
 .kv{display:grid;grid-template-columns:5.5em 1fr;gap:8px 16px;margin:0}
 .kv dt{color:var(--dim)}
 .kv dd{margin:0;color:var(--bright)}
 .kv dd small{display:block;font-size:inherit;color:var(--ink)}
-.kv .dday{color:var(--amber)}
+.kv .dday{color:var(--accent)}
 
-/* roster */
 .cars{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.car{border:1px solid var(--frame);padding:14px 16px;display:grid;gap:10px}
-.car h3{margin:0;font-size:16px;font-weight:400;letter-spacing:.04em}
+.car{border:1px solid var(--frame);padding:14px 16px;display:grid;gap:10px;border-radius:calc(var(--radius) * .7)}
+.car h3{margin:0;font:inherit;letter-spacing:.04em}
 .car.a h3{color:var(--car-a)} .car.b h3{color:var(--car-b)}
 .car ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .car li{display:grid;grid-template-columns:3.2em 1fr;gap:10px;color:var(--bright)}
 .car .tag{color:var(--dim)}
 .car.a .drv{color:var(--car-a)} .car.b .drv{color:var(--car-b)}
-.car .route{color:var(--ink);border-top:1px dotted var(--dim);padding-top:8px}
+.car .route{color:var(--ink);border-top:var(--sep);padding-top:8px}
 i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
 
-/* timeline */
 .tl{list-style:none;margin:0;padding:0}
-.tl li{display:grid;grid-template-columns:4.6em 1fr;gap:2px 14px;padding:10px 0;border-top:1px dotted var(--dim)}
+.tl li{display:grid;grid-template-columns:4.6em 1fr;gap:2px 14px;padding:10px 0;border-top:var(--sep)}
 .tl li:first-child{border-top:0;padding-top:0}
 .tl li:last-child{padding-bottom:0}
-.tl time{color:var(--cyan);font-variant-numeric:tabular-nums}
+.tl time{color:var(--link);font-variant-numeric:tabular-nums}
 .tl .ev{color:var(--bright)}
-.tl .memo{grid-column:2;color:var(--ink)}
+.tl .memo{grid-column:2;color:var(--ink);font-family:var(--font-memo)}
 .tl .memo::before{content:"└ ";color:var(--dim)}
-.tip{margin-top:16px;padding-top:12px;border-top:1px dotted var(--dim);color:var(--ink)}
-.tip b{font-weight:400;color:var(--amber)}
+.tip{margin-top:16px;padding-top:12px;border-top:var(--sep);color:var(--ink)}
+.tip b{font-weight:400;color:var(--accent)}
 
-/* checklist */
 .chk-head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:6px}
 .chk{list-style:none;margin:0;padding:0}
-.chk button{background:none;border:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;border-radius:0;color:var(--bright);font:inherit;text-align:left;padding:7px 0;width:100%;cursor:pointer;display:grid;grid-template-columns:2.2em 1fr;gap:8px;border-top:1px dotted var(--dim)}
+.chk button{background:none;border:0;border-radius:0;-webkit-tap-highlight-color:transparent;touch-action:manipulation;color:var(--bright);font:inherit;text-align:left;padding:7px 0;width:100%;cursor:pointer;display:grid;grid-template-columns:2.2em 1fr;gap:8px;border-top:var(--sep)}
 .chk li:first-child button{border-top:0}
-.chk .box{color:var(--amber)}
+.chk .box{color:var(--accent);position:relative}
 .chk button[aria-pressed="true"]{color:var(--dim);text-decoration:line-through}
-.chk button[aria-pressed="true"] .box{color:var(--green);text-decoration:none}
-.prog{color:var(--green)}
+.chk button[aria-pressed="true"] .box{color:var(--ok);text-decoration:none}
+.prog{color:var(--ok)}
 
-/* dir listing */
 .dirhead{margin:0 0 6px;white-space:pre-wrap;color:var(--dim);font:inherit}
 .dir{list-style:none;margin:0;padding:0}
-.dir li{display:grid;grid-template-columns:1fr auto;gap:0 12px;padding:8px 0;border-top:1px dotted var(--dim)}
+.dir li{display:grid;grid-template-columns:1fr auto;gap:0 12px;padding:8px 0;border-top:var(--sep)}
 .dir .nm{color:var(--bright)}
 .dir .ad,.dir .hr{grid-column:1/-1;color:var(--dim)}
 .dir .hr{color:var(--ink)}
@@ -109,24 +120,107 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
 .prompt .meta{margin:10px 0 0;color:var(--dim)}
 @keyframes blink{50%{opacity:0}}
 
+/* ── everything that is not a text terminal (win98, book, gallery, midnight) ── */
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) :is(.banner .shade,.dirhead,.prompt .line,.menubar a b,.win-title .fn){display:none}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .tl .memo::before{content:none}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .win-title::before,:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .win::after{content:none}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .win-title{position:static;display:block;padding:0;margin:0 0 14px;letter-spacing:0;background:none}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .win-title::after{content:attr(data-ko)}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) a:hover,:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) a:focus-visible{background:transparent;color:var(--link);text-decoration:underline;text-underline-offset:3px}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .menubar a:hover,:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .menubar a:focus-visible{background:transparent;color:var(--bar-fg);text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--accent)}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .chk .box{color:transparent}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .chk .box::before{content:"";position:absolute;left:0;top:.28em;width:16px;height:16px;box-sizing:border-box;border:1.5px solid var(--frame);border-radius:calc(var(--radius) * .3);background:var(--surface)}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .chk button[aria-pressed="true"] .box::before{background:var(--accent);border-color:var(--accent)}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .chk button[aria-pressed="true"] .box::after{content:"✓";position:absolute;left:3px;top:.12em;font-size:12px;line-height:1;color:#fff;font-family:system-ui,sans-serif;font-weight:700}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .chk button[aria-pressed="true"]{text-decoration:none}
+:where(:root:not([data-skin="dos"]):not([data-skin="hitel"])) .chk button[aria-pressed="true"] > span:last-child{text-decoration:line-through}
+
+/* ── Windows 98 ─────────────────────────────────────────────── */
+[data-skin="win98"] .menubar{border-bottom:1px solid #808080;box-shadow:inset 0 1px #fff}
+[data-skin="win98"] .menubar .brand{border:1px solid;border-color:#fff #404040 #404040 #fff;padding:1px 8px;margin:3px 10px 3px 0;font-weight:700}
+[data-skin="win98"] .menubar a:hover,[data-skin="win98"] .menubar a:focus-visible{text-decoration:none;box-shadow:inset 1px 1px #404040,inset -1px -1px #fff}
+[data-skin="win98"] #skin{background:#fff;border:1px solid;border-color:#404040 #fff #fff #404040}
+[data-skin="win98"] .banner h1{color:#fff;text-shadow:1px 1px #004040}
+[data-skin="win98"] .banner .sub,[data-skin="win98"] .banner .sub em{color:#fff}
+[data-skin="win98"] .win{--ink:#000;--bright:#000;--dim:#404040;--accent:#000080;--surface:#c0c0c0;color:#000;border:2px solid;border-color:#fff #404040 #404040 #fff;box-shadow:inset -1px -1px #808080,inset 1px 1px #dfdfdf;padding:4px 4px 14px}
+[data-skin="win98"] .win-title{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;padding:3px 24px 3px 6px;margin:0 0 14px;font-weight:700}
+[data-skin="win98"] .win-title::after{content:attr(data-ko) " - 메모장"}
+[data-skin="win98"] .win::after{content:"×";position:absolute;top:6px;right:8px;width:16px;height:14px;line-height:12px;text-align:center;font-size:14px;padding:0;color:#000;background:#c0c0c0;border:1px solid;border-color:#fff #404040 #404040 #fff}
+[data-skin="win98"] .win > :not(.win-title){margin-left:8px;margin-right:8px}
+[data-skin="win98"] .car{background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080}
+[data-skin="win98"] .chk .box::before{background:#fff;border:2px solid;border-color:#808080 #fff #fff #808080;border-radius:0}
+[data-skin="win98"] .chk button[aria-pressed="true"] .box::before{background:#fff;border-color:#808080 #fff #fff #808080}
+[data-skin="win98"] .chk button[aria-pressed="true"] .box::after{color:#000;left:2px}
+[data-skin="win98"] .prompt .meta{color:#eaf6f6}
+
+/* ── 수학의 정석 ────────────────────────────────────────────── */
+[data-skin="book"] .menubar{border-bottom:2px solid #1a1a1a}
+[data-skin="book"] .menubar .brand{font-weight:700}
+[data-skin="book"] .banner h1{font-weight:800;font-size:38px;color:#111}
+[data-skin="book"] .banner .sub{font-family:var(--font-memo);font-size:1.45em;line-height:1.25;color:#1d3a8a}
+[data-skin="book"] .banner .sub em{color:#1d3a8a}
+[data-skin="book"] .win{border:0;border-top:3px solid #1a1a1a;border-bottom:1px solid #1a1a1a;padding:14px 4px 20px;background:transparent}
+[data-skin="book"] .win-title{font:700 21px/1.4 var(--font-head);color:#111;border-bottom:1px solid #1a1a1a;padding-bottom:8px}
+[data-skin="book"] .win-title::before{content:"■ ";color:var(--accent);font-size:.75em;vertical-align:.1em}
+[data-skin="book"] .kv dt,[data-skin="book"] .car .tag{font-size:.9em}
+[data-skin="book"] .car{background:rgba(255,255,255,.45);border:1px solid #1a1a1a}
+[data-skin="book"] .tl time{font-weight:700;color:#111}
+[data-skin="book"] .tl .memo{font-size:1.35em;line-height:1.2;color:#1d3a8a;padding-top:2px}
+[data-skin="book"] .tip{font-family:var(--font-memo);font-size:1.3em;line-height:1.25;color:#1d3a8a}
+[data-skin="book"] .tip b{color:var(--accent)}
+[data-skin="book"] .chk .box::before{border:1.5px solid #1a1a1a;border-radius:0;background:transparent}
+[data-skin="book"] .chk button[aria-pressed="true"] .box::before{background:transparent;border-color:#1a1a1a}
+[data-skin="book"] .chk button[aria-pressed="true"] .box::after{content:"✓";color:var(--accent);font:26px/1 var(--font-memo);left:1px;top:-.25em;transform:rotate(-8deg)}
+[data-skin="book"] .prog{color:var(--accent);font-family:var(--font-memo);font-size:1.3em;line-height:1.2}
+
+/* ── 갤러리 · 미드나잇 (modern) ─────────────────────────────── */
+[data-skin="gallery"] .menubar,[data-skin="midnight"] .menubar{backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--frame)}
+[data-skin="gallery"] .menubar .in,[data-skin="midnight"] .menubar .in{padding-block:6px}
+[data-skin="gallery"] .menubar .brand,[data-skin="midnight"] .menubar .brand{font-weight:600;letter-spacing:.02em}
+[data-skin="gallery"] .menubar a,[data-skin="midnight"] .menubar a{color:var(--dim);font-weight:500;padding:4px 10px}
+[data-skin="gallery"] .menubar a:hover,[data-skin="midnight"] .menubar a:hover{color:var(--bright);text-decoration:none}
+[data-skin="gallery"] #skin,[data-skin="midnight"] #skin{border-color:var(--frame);background:var(--surface);color:var(--bright);padding:4px 8px;border-radius:999px}
+[data-skin="gallery"] .banner h1,[data-skin="midnight"] .banner h1{font-weight:600;font-size:34px;letter-spacing:-.02em;color:var(--bright)}
+[data-skin="gallery"] .banner .sub,[data-skin="midnight"] .banner .sub{color:var(--dim)}
+[data-skin="gallery"] .banner .sub em,[data-skin="midnight"] .banner .sub em{color:var(--ink);font-weight:500}
+[data-skin="gallery"] .win,[data-skin="midnight"] .win{border:1px solid var(--frame);padding:22px 22px 20px}
+[data-skin="gallery"] .win{box-shadow:0 1px 2px rgba(16,24,40,.04),0 10px 28px -14px rgba(16,24,40,.14)}
+[data-skin="midnight"] .win{background:linear-gradient(180deg,rgba(255,255,255,.035),transparent 60%),var(--surface)}
+[data-skin="gallery"] .win-title,[data-skin="midnight"] .win-title{font:600 18px/1.4 var(--font-head);color:var(--bright)}
+[data-skin="gallery"] .win-title::after,[data-skin="midnight"] .win-title::after{content:attr(data-ko)}
+[data-skin="gallery"] .car,[data-skin="midnight"] .car{background:var(--bg);border-color:var(--frame)}
+[data-skin="gallery"] .car h3,[data-skin="midnight"] .car h3{font-weight:600}
+[data-skin="gallery"] .kv dt,[data-skin="midnight"] .kv dt{font-size:.92em}
+[data-skin="gallery"] .tl time,[data-skin="midnight"] .tl time{color:var(--bright);font-weight:600}
+[data-skin="gallery"] .tl .ev,[data-skin="midnight"] .tl .ev{font-weight:500}
+[data-skin="gallery"] .tl .memo,[data-skin="midnight"] .tl .memo{color:var(--dim);font-size:.94em}
+[data-skin="gallery"] .tip b,[data-skin="midnight"] .tip b{font-weight:600}
+[data-skin="gallery"] .dir .nm,[data-skin="midnight"] .dir .nm{font-weight:500}
+[data-skin="gallery"] .dir a,[data-skin="midnight"] .dir a{font-size:.9em;font-weight:500}
+[data-skin="gallery"] .chk button,[data-skin="midnight"] .chk button{color:var(--ink)}
+[data-skin="gallery"] .prog,[data-skin="midnight"] .prog{font-weight:500}
+
 @media (max-width:560px){
-  body{font-size:15px}
+  :root{--fs:15px}
+  [data-skin="book"]{--fs:16px}
   .banner h1{font-size:22px}
+  [data-skin="book"] .banner h1{font-size:28px}
+  [data-skin="gallery"] .banner h1,[data-skin="midnight"] .banner h1{font-size:26px}
   .menubar .brand,.menubar .clock{display:none}
   .menubar .in{justify-content:center}
   .menubar a{padding:4px 5px;font-size:14px}
+  .skin{flex-basis:100%;justify-content:center;margin-left:0;padding:2px 0 6px}
   .win{padding:22px 12px 14px}
+  [data-skin="gallery"] .win,[data-skin="midnight"] .win{padding:18px 16px 16px}
   .kv{grid-template-columns:4.6em 1fr}
 }
 @media (prefers-reduced-motion:reduce){
   .cursor,.boot.typing::after{animation:none}
 }
 </style>
-<style>
-@font-face{font-family:'Galmuri11';font-style:normal;font-weight:400;font-display:block;src:url(Galmuri11.woff2) format('woff2')}
-</style>
 </head>
 <body>
+
 <nav class="menubar" aria-label="바로가기">
   <div class="in">
     <span class="brand">GANGWON.EXE</span>
@@ -136,17 +230,32 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
     <a href="#day2" data-key="4"><b>4</b> 2일차</a>
     <a href="#check" data-key="5"><b>5</b> 체크</a>
     <a href="#places" data-key="6"><b>6</b> 장소</a>
+    <label class="skin"><span class="skin-lab">THEME</span>
+      <select id="skin" aria-label="화면 테마 선택">
+        <option value="dos">MS-DOS</option>
+        <option value="hitel">PC통신</option>
+        <option value="win98">Windows 98</option>
+        <option value="book">수학의 정석</option>
+        <option value="gallery">갤러리</option>
+        <option value="midnight">미드나잇</option>
+      </select>
+    </label>
     <span class="clock" id="clock" aria-hidden="true"></span>
   </div>
 </nav>
 
 <main class="screen">
 
-<pre class="boot" id="boot">Starting MS-DOS...
+<pre class="boot boot-dos">Starting MS-DOS...
 
 HIMEM is testing extended memory...done.
 C:\>cd GANGWON
 C:\GANGWON>type PLAN.TXT</pre>
+<pre class="boot boot-hitel">ATDT 01410
+CONNECT 14400/ARQ/V42BIS
+
+ 하이텔 HiTEL  ·  ID: SEORAK84
+ [동호회] 84년생 설악원정대 > 공지 1번 읽기</pre>
 
 <header class="banner">
   <div class="shade">░▒▓█▓▒░</div>
@@ -155,7 +264,7 @@ C:\GANGWON>type PLAN.TXT</pre>
 </header>
 
 <section class="win" id="mission" aria-labelledby="t-mission">
-  <h2 class="win-title" id="t-mission">MISSION.TXT</h2>
+  <h2 class="win-title" id="t-mission" data-ko="작전 개요"><span class="fn">MISSION.TXT</span></h2>
   <dl class="kv">
     <dt>일자</dt><dd>2026.10.16 (금) ~ 10.17 (토) · 1박 2일</dd>
     <dt>남은 날</dt><dd class="dday" id="dday">D-25</dd>
@@ -167,7 +276,7 @@ C:\GANGWON>type PLAN.TXT</pre>
 </section>
 
 <section class="win" id="roster" aria-labelledby="t-roster">
-  <h2 class="win-title" id="t-roster">ROSTER.DAT</h2>
+  <h2 class="win-title" id="t-roster" data-ko="인원 · 차량"><span class="fn">ROSTER.DAT</span></h2>
   <div class="cars">
     <article class="car a">
       <h3>CAR-A · 하남호</h3>
@@ -191,7 +300,7 @@ C:\GANGWON>type PLAN.TXT</pre>
 </section>
 
 <section class="win" id="day1" aria-labelledby="t-day1">
-  <h2 class="win-title" id="t-day1">DAY1.BAT · 10.16 금</h2>
+  <h2 class="win-title" id="t-day1" data-ko="1일차 · 10.16 금"><span class="fn">DAY1.BAT · 10.16 금</span></h2>
   <ol class="tl">
     <li><time>09:00</time><span class="ev"><i class="a">하남호</i> · <i class="b">판교호</i> 동시 출발</span><span class="memo">서울양양고속도로. 각자 내비 따라 이동</span></li>
     <li><time>10:40</time><span class="ev">내린천휴게소 합류</span><span class="memo">고속도로 위에 떠 있는 휴게소. 15분 쉬고 함께 출발</span></li>
@@ -207,7 +316,7 @@ C:\GANGWON>type PLAN.TXT</pre>
 </section>
 
 <section class="win" id="day2" aria-labelledby="t-day2">
-  <h2 class="win-title" id="t-day2">DAY2.BAT · 10.17 토</h2>
+  <h2 class="win-title" id="t-day2" data-ko="2일차 · 10.17 토"><span class="fn">DAY2.BAT · 10.17 토</span></h2>
   <ol class="tl">
     <li><time>08:00</time><span class="ev">라면 아침 · 짐 정리</span><span class="memo">객실 주방 사용</span></li>
     <li><time>09:00</time><span class="ev">체크아웃 · 설악산 소공원 이동</span><span class="memo">리조트에서 10분. 정식 체크아웃은 11시지만 일찍 나가는 게 유리</span></li>
@@ -220,8 +329,8 @@ C:\GANGWON>type PLAN.TXT</pre>
 </section>
 
 <section class="win" id="check" aria-labelledby="t-check">
-  <h2 class="win-title" id="t-check">CHECKLST.TXT</h2>
-  <div class="chk-head"><p class="dimtxt">출발 전 확인. 누르면 체크되고 이 브라우저에만 저장됨</p><p class="prog" id="prog">완료 0 / 8</p></div>
+  <h2 class="win-title" id="t-check" data-ko="출발 전 체크리스트"><span class="fn">CHECKLST.TXT</span></h2>
+  <div class="chk-head"><p class="dimtxt">누르면 체크되고 이 브라우저에만 저장됨</p><p class="prog" id="prog">완료 0 / 8</p></div>
   <ul class="chk" id="chk">
     <li><button type="button" id="c-bbq" aria-pressed="false"><span class="box">[ ]</span><span>리조트에 테라스 바베큐 가능 여부, 그릴 대여 문의 (켄싱턴 통합예약 1588-9337)</span></button></li>
     <li><button type="button" id="c-pax" aria-pressed="false"><span class="box">[ ]</span><span>36평 6인 투숙 기준 인원 확인</span></button></li>
@@ -235,7 +344,7 @@ C:\GANGWON>type PLAN.TXT</pre>
 </section>
 
 <section class="win" id="places" aria-labelledby="t-places">
-  <h2 class="win-title" id="t-places">PLACES.DIR</h2>
+  <h2 class="win-title" id="t-places" data-ko="장소"><span class="fn">PLACES.DIR</span></h2>
 <pre class="dirhead"> Volume in drive C is GANGWON
  Directory of C:\GANGWON\PLACES</pre>
   <ul class="dir">
@@ -253,7 +362,7 @@ C:\GANGWON>type PLAN.TXT</pre>
 
 <footer class="prompt">
   <div class="line">C:\GANGWON><span class="cursor">_</span></div>
-  <p class="meta">REV 1 · 2026.09.21 · 일정이 바뀌면 이 주소 그대로 갱신됩니다</p>
+  <p class="meta">REV 2 · 2026.09.21 · 일정이 바뀌면 이 주소 그대로 갱신됩니다</p>
 </footer>
 
 </main>
@@ -261,13 +370,24 @@ C:\GANGWON>type PLAN.TXT</pre>
 <script>
 (function(){
   var rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
 
-  // boot typewriter
-  var pre = document.getElementById('boot'), full = pre.textContent;
+  // theme
+  var sel = document.getElementById('skin'), meta = document.querySelector('meta[name="theme-color"]');
+  function applySkin(v, save){ root.dataset.skin = v; sel.value = v;
+    meta.content = getComputedStyle(root).getPropertyValue('--bg').trim() || '#0b0c10';
+    if(save){ try{ localStorage.setItem('gw1984-skin', v); }catch(e){} } }
+  applySkin(root.dataset.skin || 'dos', false);
+  sel.addEventListener('change', function(){ applySkin(sel.value, true); });
+
+  // boot typewriter on whichever terminal intro is visible
   if(!rm){
-    pre.textContent=''; pre.classList.add('typing'); var i=0;
-    (function t(){ pre.textContent = full.slice(0, ++i);
-      if(i < full.length) setTimeout(t, full[i-1]==='\n' ? 160 : 18); else pre.classList.remove('typing'); })();
+    [].forEach.call(document.querySelectorAll('.boot'), function(pre){
+      if(getComputedStyle(pre).display === 'none') return;
+      var full = pre.textContent, i = 0; pre.textContent=''; pre.classList.add('typing');
+      (function t(){ pre.textContent = full.slice(0, ++i);
+        if(i < full.length) setTimeout(t, full[i-1]==='\n' ? 160 : 18); else pre.classList.remove('typing'); })();
+    });
   }
 
   // D-day
@@ -291,7 +411,7 @@ C:\GANGWON>type PLAN.TXT</pre>
 
   // number keys 1-6 jump to sections
   document.addEventListener('keydown', function(e){
-    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    if(e.metaKey||e.ctrlKey||e.altKey||e.target===sel) return;
     var a = document.querySelector('.menubar a[data-key="'+e.key+'"]'); if(!a) return;
     var el = document.querySelector(a.getAttribute('href')); if(!el) return;
     e.preventDefault(); el.scrollIntoView({behavior: rm?'auto':'smooth', block:'start'});
