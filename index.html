@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="ko" data-skin="dos">
+<html lang="ko" data-skin="hitel">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="1984년생 동창 6명의 2026년 10월 16~17일 강원도 고성 1박 2일 일정표">
-<meta name="theme-color" content="#0b0c10">
+<meta name="theme-color" content="#0e1f9e">
 <title>설악 원정 1984</title>
-<script>(function(){var k=null;try{k=new URLSearchParams(location.search).get('skin')||localStorage.getItem('gw1984-skin')}catch(e){}var ok=['dos','hitel','win98','book','gallery','midnight'];document.documentElement.dataset.skin=ok.indexOf(k)>-1?k:'dos'})()</script>
+<script>(function(){var k=null;try{k=new URLSearchParams(location.search).get('skin')||localStorage.getItem('gw1984-skin')}catch(e){}var ok=['dos','hitel','win98','book','gallery','midnight'];document.documentElement.dataset.skin=ok.indexOf(k)>-1?k:'hitel'})()</script>
 <link rel="preload" href="Galmuri11.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&display=swap">
 <style>
@@ -232,8 +232,8 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
     <a href="#places" data-key="6"><b>6</b> 장소</a>
     <label class="skin"><span class="skin-lab">THEME</span>
       <select id="skin" aria-label="화면 테마 선택">
-        <option value="dos">MS-DOS</option>
         <option value="hitel">PC통신</option>
+        <option value="dos">MS-DOS</option>
         <option value="win98">Windows 98</option>
         <option value="book">수학의 정석</option>
         <option value="gallery">갤러리</option>
@@ -375,9 +375,9 @@ CONNECT 14400/ARQ/V42BIS
   // theme
   var sel = document.getElementById('skin'), meta = document.querySelector('meta[name="theme-color"]');
   function applySkin(v, save){ root.dataset.skin = v; sel.value = v;
-    meta.content = getComputedStyle(root).getPropertyValue('--bg').trim() || '#0b0c10';
+    meta.content = getComputedStyle(root).getPropertyValue('--bg').trim() || '#0e1f9e';
     if(save){ try{ localStorage.setItem('gw1984-skin', v); }catch(e){} } }
-  applySkin(root.dataset.skin || 'dos', false);
+  applySkin(root.dataset.skin || 'hitel', false);
   sel.addEventListener('change', function(){ applySkin(sel.value, true); });
 
   // boot typewriter on whichever terminal intro is visible
