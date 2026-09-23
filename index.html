@@ -94,6 +94,7 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
 .tl .ev{color:var(--bright)}
 .tl .memo{grid-column:2;color:var(--ink);font-family:var(--font-memo)}
 .tl .memo::before{content:"└ ";color:var(--dim)}
+.day{margin:20px 0 6px;padding-bottom:6px;border-bottom:var(--sep);font:inherit;color:var(--accent)}
 .tip{margin-top:16px;padding-top:12px;border-top:var(--sep);color:var(--ink)}
 .tip b{font-weight:400;color:var(--accent)}
 
@@ -189,7 +190,7 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
 [data-skin="gallery"] .win-title,[data-skin="midnight"] .win-title{font:600 18px/1.4 var(--font-head);color:var(--bright)}
 [data-skin="gallery"] .win-title::after,[data-skin="midnight"] .win-title::after{content:attr(data-ko)}
 [data-skin="gallery"] .car,[data-skin="midnight"] .car{background:var(--bg);border-color:var(--frame)}
-[data-skin="gallery"] .car h3,[data-skin="midnight"] .car h3{font-weight:600}
+[data-skin="gallery"] .car h3,[data-skin="midnight"] .car h3,[data-skin="gallery"] .day,[data-skin="midnight"] .day{font-weight:600}
 [data-skin="gallery"] .kv dt,[data-skin="midnight"] .kv dt{font-size:.92em}
 [data-skin="gallery"] .tl time,[data-skin="midnight"] .tl time{color:var(--bright);font-weight:600}
 [data-skin="gallery"] .tl .ev,[data-skin="midnight"] .tl .ev{font-weight:500}
@@ -227,9 +228,9 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
     <span class="brand">GANGWON.EXE</span>
     <a href="#mission" data-key="1"><b>1</b> 개요</a>
     <a href="#roster" data-key="2"><b>2</b> 인원</a>
-    <a href="#day1" data-key="3"><b>3</b> 1일차</a>
-    <a href="#day2" data-key="4"><b>4</b> 2일차</a>
-    <a href="#planb" data-key="5"><b>5</b> B안</a>
+    <a href="#rest" data-key="3"><b>3</b> 휴식</a>
+    <a href="#nature" data-key="4"><b>4</b> 자연</a>
+    <a href="#active" data-key="5"><b>5</b> 액티비티</a>
     <a href="#check" data-key="6"><b>6</b> 체크</a>
     <a href="#places" data-key="7"><b>7</b> 장소</a>
     <label class="skin"><span class="skin-lab">THEME</span>
@@ -273,6 +274,7 @@ CONNECT 14400/ARQ/V42BIS
     <dt>집결</dt><dd>내린천휴게소 10:40<small>서울양양고속도로 양양 방향. 두 차가 여기서 만나 함께 이동</small></dd>
     <dt>본부</dt><dd>켄싱턴리조트 설악밸리 · 노블리안 루체른<small>테라스가든뷰 36평 단독형 · 체크인 15:00 / 체크아웃 11:00</small><small>강원특별자치도 고성군 토성면 신평골길 8-25</small></dd>
     <dt>인원</dt><dd>6명 · 차량 2대 (<i class="a">하남호</i> / <i class="b">판교호</i>)</dd>
+    <dt>플랜</dt><dd><a href="#rest">휴식</a> · <a href="#nature">자연속으로</a> · <a href="#active">액티비티</a> 중 하나<small>단톡 투표로 결정</small></dd>
     <dt>복귀</dt><dd>2일차 점심 후 13:00 출발 · 15:30 도착 예정</dd>
   </dl>
 </section>
@@ -301,50 +303,78 @@ CONNECT 14400/ARQ/V42BIS
   </div>
 </section>
 
-<section class="win" id="day1" aria-labelledby="t-day1">
-  <h2 class="win-title" id="t-day1" data-ko="1일차 · 10.16 금"><span class="fn">DAY1.BAT · 10.16 금</span></h2>
+<section class="win" id="rest" aria-labelledby="t-rest">
+  <h2 class="win-title" id="t-rest" data-ko="플랜 1 · 휴식"><span class="fn">REST.BAT</span></h2>
+  <p class="dimtxt">운전 말고는 아무것도 안 한다. 오션뷰 카페, 온천, 늦잠.</p>
+  <h3 class="day">1일차 · 10.16 금</h3>
   <ol class="tl">
-    <li><time>09:00</time><span class="ev"><i class="a">하남호</i> · <i class="b">판교호</i> 동시 출발</span><span class="memo">서울양양고속도로. 각자 내비 따라 이동</span></li>
-    <li><time>10:40</time><span class="ev">내린천휴게소 합류</span><span class="memo">고속도로 위에 떠 있는 휴게소. 15분 쉬고 함께 출발</span></li>
-    <li><time>11:45</time><span class="ev">백촌막국수</span><span class="memo">먼저 도착한 차가 테이블링 앱으로 6명 대기 등록. 메밀국수 + 편육</span></li>
-    <li><time>13:30</time><span class="ev">천진해변 · 글라스하우스</span><span class="memo">서핑숍 겸 카페. 커피나 맥주 한 잔, 해변 산책</span></li>
-    <li><time>14:30</time><span class="ev">속초 중앙시장 장보기</span><span class="memo">닭강정, 저녁 고기, 술, 얼음, 아침 라면</span></li>
+    <li><time>11:45</time><span class="ev">백촌막국수</span><span class="memo">먼저 도착한 차가 테이블링 앱으로 6명 대기 등록. 메밀국수 + 편육. 대기 2시간 넘으면 근처 동루골막국수</span></li>
+    <li><time>13:15</time><span class="ev">바다정원</span><span class="memo">1층 베이커리 카페, 3층 전망대. 바다 보면서 오래 앉아 있기</span></li>
+    <li><time>14:30</time><span class="ev">속초 중앙시장 장보기</span><span class="memo">만석닭강정, 저녁 고기, 술, 얼음, 아침 라면</span></li>
     <li><time>15:30</time><span class="ev">켄싱턴 설악밸리 체크인</span><span class="memo">노블리안 루체른 · 짐 풀고 한숨</span></li>
-    <li><time>16:00</time><span class="ev">자유시간</span><span class="memo">리조트 산책, 낮잠, 족구든 뭐든</span></li>
-    <li><time>18:00</time><span class="ev">테라스 바베큐</span><span class="memo">바베큐 불가 시 학사평 순두부마을로 대체</span></li>
+    <li><time>16:00</time><span class="ev">척산온천</span><span class="memo">켄싱턴 제휴 사우나 · 차로 15분 안팎 · 노천탕은 19:00까지</span></li>
+    <li><time>18:00</time><span class="ev">테라스 바베큐</span><span class="memo">안 되면 장본 회 · 닭강정으로 실내 파티</span></li>
     <li><time>20:30</time><span class="ev">레트로 나이트</span><span class="memo">2000~2002 플레이리스트, 야식 닭강정, 술게임</span></li>
   </ol>
-  <p class="tip"><b>* 백촌막국수 대기</b> 평일에도 2~3시간 줄이 서는 곳. 금요일 11시 반 전 도착이 핵심. 대기가 2시간 넘으면 근처 동루골막국수로 전환.</p>
+  <h3 class="day">2일차 · 10.17 토</h3>
+  <ol class="tl">
+    <li><time>09:00</time><span class="ev">늦잠 · 라면 아침</span><span class="memo">객실 주방 사용</span></li>
+    <li><time>10:00</time><span class="ev">리조트 산책 · 11:00 체크아웃</span><span class="memo">레이크사이드 산책로, 힐링 해먹숲. 체크아웃 시간까지 꽉 채움</span></li>
+    <li><time>11:30</time><span class="ev">봉포머구리집 고성점 · 물회</span><span class="memo">토요일 점심이라 대기 있음. 먼저 도착한 사람이 이름 올리기</span></li>
+    <li><time>12:30</time><span class="ev">글라스하우스 커피</span><span class="memo">봉포머구리집 바로 맞은편. 천진해변 보면서 한 잔 하고 13:00 귀가</span></li>
+  </ol>
+  <p class="tip"><b>* 비 와도 OK</b> 바다정원 창가, 척산온천, 객실 모두 실내라 날씨를 거의 안 탄다.</p>
 </section>
 
-<section class="win" id="day2" aria-labelledby="t-day2">
-  <h2 class="win-title" id="t-day2" data-ko="2일차 · 10.17 토"><span class="fn">DAY2.BAT · 10.17 토</span></h2>
+<section class="win" id="nature" aria-labelledby="t-nature">
+  <h2 class="win-title" id="t-nature" data-ko="플랜 2 · 자연속으로"><span class="fn">NATURE.BAT</span></h2>
+  <p class="dimtxt">단풍 절정 주말을 제대로. 1일차 오후엔 울산바위 정면 뷰, 2일차 아침엔 설악 계곡길.</p>
+  <h3 class="day">1일차 · 10.16 금</h3>
   <ol class="tl">
-    <li><time>08:00</time><span class="ev">라면 아침 · 짐 정리</span><span class="memo">객실 주방 사용</span></li>
-    <li><time>09:00</time><span class="ev">체크아웃 · 설악산 소공원 이동</span><span class="memo">리조트에서 10분. 정식 체크아웃은 11시지만 일찍 나가는 게 유리</span></li>
-    <li><time>09:20</time><span class="ev">권금성 케이블카</span><span class="memo">왕복 16,000원 · 현장 구매만 가능, 탑승 시간 배정 · 오전 9~11시가 한산하고 전망도 좋음</span></li>
-    <li><time>11:30</time><span class="ev">봉포머구리집 고성점 · 물회</span><span class="memo">글라스하우스 바로 맞은편. 토요일 점심이라 11시 반 도착 목표</span></li>
-    <li><time>13:00</time><span class="ev">귀가 출발</span><span class="memo">토요일 오후 서울 방향 정체 전에 빠져나옴</span></li>
-    <li><time>15:30</time><span class="ev">하남 · 판교 도착 예정</span></li>
+    <li><time>11:45</time><span class="ev">백촌막국수</span><span class="memo">먼저 도착한 차가 테이블링 앱으로 6명 대기 등록. 메밀국수 + 편육. 대기 2시간 넘으면 근처 동루골막국수</span></li>
+    <li><time>13:00</time><span class="ev">화암사 → 수바위 → 성인대</span><span class="memo">울산바위를 정면으로 보는 코스. 왕복 약 2시간, 일부 가파르고 미끄러우니 운동화 필수</span></li>
+    <li><time>15:30</time><span class="ev">켄싱턴 설악밸리 체크인</span><span class="memo">화암사에서 금방. 짐 풀고 한숨</span></li>
+    <li><time>16:00</time><span class="ev">한 차는 장보기</span><span class="memo">속초 중앙시장 (만석닭강정, 고기, 술, 얼음). 나머지는 레이크사이드 산책 · 낮잠</span></li>
+    <li><time>18:00</time><span class="ev">테라스 바베큐</span><span class="memo">안 되면 장본 회 · 닭강정으로 실내 파티</span></li>
+    <li><time>20:30</time><span class="ev">레트로 나이트</span><span class="memo">내일 06:40 출발이니 적당히</span></li>
   </ol>
-  <p class="tip"><b>* 단풍</b> 설악산 단풍 절정이 10월 중순. 딱 이 주말이다.</p>
+  <h3 class="day">2일차 · 10.17 토</h3>
+  <ol class="tl">
+    <li><time>06:40</time><span class="ev">체크아웃</span><span class="memo">짐 싸서 바로 출발</span></li>
+    <li><time>07:00</time><span class="ev">김영애할머니순두부</span><span class="memo">학사평 순두부 본점, 07:00 오픈. 뜨끈하게 아침</span></li>
+    <li><time>07:50</time><span class="ev">설악산 소공원</span><span class="memo">단풍철엔 새벽에 만차. B · C지구 주차장에 세우고 무료 셔틀</span></li>
+    <li><time>08:10</time><span class="ev">신흥사 → 비선대 왕복</span><span class="memo">6.4km, 2시간~2시간 30분. 거의 평지인 계곡길이 단풍 절정 구간</span></li>
+    <li><time>11:30</time><span class="ev">청초수물회 속초본점</span><span class="memo">속초 대표 물회집. 주말 대기 있으니 도착하면 바로 번호표. 먹고 13:00 귀가</span></li>
+  </ol>
+  <p class="tip"><b>* 케이블카도 타려면</b> 비선대 대신 권금성 케이블카. 왕복 16,000원, 현장 발권, 탑승 시간 배정, 강풍 · 안개면 운휴. 비 오면 1일차 성인대는 미끄러우니 척산온천으로.</p>
 </section>
 
-<section class="win" id="planb" aria-labelledby="t-planb">
-  <h2 class="win-title" id="t-planb" data-ko="플랜 B"><span class="fn">PLANB.BAT</span></h2>
+<section class="win" id="active" aria-labelledby="t-active">
+  <h2 class="win-title" id="t-active" data-ko="플랜 3 · 액티비티"><span class="fn">ACTIVITY.BAT</span></h2>
+  <p class="dimtxt">마흔둘에 서핑 입문, 다음 날 아침엔 가자미 배낚시. 몸은 힘들어도 얘깃거리는 제일 많다.</p>
+  <h3 class="day">1일차 · 10.16 금</h3>
   <ol class="tl">
-    <li><time>11:45</time><span class="ev">백촌막국수 대기 2시간 넘으면</span><span class="memo">근처 동루골막국수로 전환</span></li>
-    <li><time>16:00</time><span class="ev">1일차 비 와서 산책 못 하면</span><span class="memo">척산온천 사우나 · 리조트에서 차로 15분 안팎 · 05:30~20:00</span></li>
-    <li><time>18:00</time><span class="ev">바베큐 불가 (비 · 그릴 없음)</span><span class="memo">14:30 장볼 때 고기 대신 회 · 닭강정 사서 실내 파티. 나가 먹을 거면 학사평 순두부마을</span></li>
-    <li><time>09:20</time><span class="ev">2일차 케이블카 운휴 · 탑승 배정이 10:30 이후</span><span class="memo">소공원에서 평지 10분 신흥사 · 통일대불 산책. 비까지 오면 척산온천 들렀다 물회</span></li>
+    <li><time>11:40</time><span class="ev">88생선구이</span><span class="memo">속초 중앙시장 옆 숯불 생선구이. 예약 불가, 평일 점심은 대기 짧은 편</span></li>
+    <li><time>12:25</time><span class="ev">속초 중앙시장 장보기</span><span class="memo">만석닭강정, 고기, 술 + 아이스박스 · 얼음 (서핑하는 동안 차에 보관). 13:00 자작도로 출발</span></li>
+    <li><time>14:00</time><span class="ev">고고비치서프 입문 강습</span><span class="memo">자작도해변 · 이론 → 해변 → 바다 → 프리서핑 2시간 30분 · 1인 35,000원 + 슈트 10,000원 · 수영복 · 슬리퍼 지참</span></li>
+    <li><time>17:00</time><span class="ev">켄싱턴 설악밸리 체크인</span><span class="memo">샤워하고 한숨</span></li>
+    <li><time>18:30</time><span class="ev">테라스 바베큐</span><span class="memo">안 되면 장본 회 · 닭강정으로 실내 파티</span></li>
+    <li><time>20:30</time><span class="ev">레트로 나이트</span><span class="memo">내일 배 타니까 과음 금지</span></li>
   </ol>
-  <p class="tip"><b>* 케이블카</b> 강풍 · 안개면 바로 멈춘다. 2일차 아침 설악케이블카 홈페이지 첫 화면에서 당일 운행 여부부터 확인.</p>
+  <h3 class="day">2일차 · 10.17 토</h3>
+  <ol class="tl">
+    <li><time>07:40</time><span class="ev">체크아웃 · 낙산항 이동</span><span class="memo">차로 40분 안팎. 멀미약은 출발할 때</span></li>
+    <li><time>08:30</time><span class="ev">가자미 배낚시</span><span class="memo">양양 낙산항 갈매기배낚시 · 2시간 30분 · 1인 30,000원 (장비 · 미끼 포함) · 신분증 필수 · 출항 시각은 예약 때 확정</span></li>
+    <li><time>11:30</time><span class="ev">청초수물회 속초본점</span><span class="memo">낙산항에서 25분. 주말 대기 있으니 바로 번호표. 먹고 13:00 귀가</span></li>
+  </ol>
+  <p class="tip"><b>* 예약 필수</b> 서핑 강습과 배낚시는 미리 예약. 파도 · 바람이 세면 둘 다 취소될 수 있으니 그땐 설악워터피아 (야외 온천 스파밸리 · 주간권 56,000원 · 오후권 47,500원).</p>
 </section>
 
 <section class="win" id="check" aria-labelledby="t-check">
   <h2 class="win-title" id="t-check" data-ko="출발 전 체크리스트"><span class="fn">CHECKLST.TXT</span></h2>
-  <div class="chk-head"><p class="dimtxt">누르면 체크되고 이 브라우저에만 저장됨</p><p class="prog" id="prog">완료 0 / 8</p></div>
+  <div class="chk-head"><p class="dimtxt">누르면 체크되고 이 브라우저에만 저장됨</p><p class="prog" id="prog">완료 0 / 9</p></div>
   <ul class="chk" id="chk">
+    <li><button type="button" id="c-vote" aria-pressed="false"><span class="box">[ ]</span><span>단톡 투표로 플랜 고르기 · 액티비티면 서핑 강습, 배낚시 예약</span></button></li>
     <li><button type="button" id="c-bbq" aria-pressed="false"><span class="box">[ ]</span><span>리조트에 테라스 바베큐 가능 여부, 그릴 대여 문의 (켄싱턴 통합예약 1588-9337)</span></button></li>
     <li><button type="button" id="c-pax" aria-pressed="false"><span class="box">[ ]</span><span>36평 6인 투숙 기준 인원 확인</span></button></li>
     <li><button type="button" id="c-tabling" aria-pressed="false"><span class="box">[ ]</span><span>테이블링 앱 설치 (백촌막국수 대기용, 한 명만 있어도 됨)</span></button></li>
@@ -361,23 +391,30 @@ CONNECT 14400/ARQ/V42BIS
 <pre class="dirhead"> Volume in drive C is GANGWON
  Directory of C:\GANGWON\PLACES</pre>
   <ul class="dir">
-    <li><span class="nm">내린천휴게소</span><a href="https://map.naver.com/p/search/내린천휴게소" target="_blank" rel="noopener">[지도]</a><span class="ad">인제군 기린면 · 서울양양고속도로 양양 방향</span></li>
-    <li><span class="nm">백촌막국수</span><a href="https://map.naver.com/p/search/백촌막국수" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 백촌1길 10</span><span class="hr">10:30~17:30 · 수요일 휴무 · 테이블링 대기</span></li>
-    <li class="alt"><span class="nm">동루골막국수 (대체)</span><a href="https://map.naver.com/p/search/동루골막국수" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 · 백촌막국수 인근</span></li>
-    <li><span class="nm">글라스하우스</span><a href="https://map.naver.com/p/search/고성 글라스하우스" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 천진해변길 43</span><span class="hr">서핑숍 겸 카페 · 천진해변 주차장 이용</span></li>
-    <li><span class="nm">봉포머구리집 고성점</span><a href="https://map.naver.com/p/search/봉포머구리집 고성점" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 천진해변길 46</span><span class="hr">10:00~21:00 · 수요일 휴무</span></li>
-    <li><span class="nm">속초 중앙시장</span><a href="https://map.naver.com/p/search/속초관광수산시장" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 중앙로147번길 12</span><span class="hr">닭강정 · 술안주 · 장보기</span></li>
-    <li><span class="nm">켄싱턴리조트 설악밸리</span><a href="https://map.naver.com/p/search/켄싱턴리조트 설악밸리" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 신평골길 8-25</span><span class="hr">체크인 15:00 · 체크아웃 11:00</span></li>
-    <li><span class="nm">설악산 소공원 · 권금성 케이블카</span><a href="https://map.naver.com/p/search/설악산 케이블카" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 설악산로 1085</span><span class="hr">왕복 16,000원 · 현장 구매 · 강풍 · 안개 시 운휴</span></li>
-    <li class="alt"><span class="nm">신흥사 · 통일대불 (대체)</span><a href="https://map.naver.com/p/search/설악산 신흥사" target="_blank" rel="noopener">[지도]</a><span class="ad">설악산 소공원 안 · 입구에서 평지 도보 10분</span></li>
-    <li class="alt"><span class="nm">척산온천휴양촌 (우천 대체)</span><a href="https://map.naver.com/p/search/척산온천휴양촌" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 노학동</span><span class="hr">사우나 05:30~20:00 · 노천탕 08:30~19:00</span></li>
-    <li class="alt"><span class="nm">학사평 순두부마을 (대체 저녁)</span><a href="https://map.naver.com/p/search/학사평 순두부마을" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 학사평 일대 · 리조트에서 10분</span></li>
+    <li><span class="nm">내린천휴게소</span><a href="https://map.naver.com/p/search/내린천휴게소" target="_blank" rel="noopener">[지도]</a><span class="ad">인제군 기린면 · 서울양양고속도로 양양 방향</span><span class="hr">공통 · 10:40 합류</span></li>
+    <li><span class="nm">켄싱턴리조트 설악밸리</span><a href="https://map.naver.com/p/search/켄싱턴리조트 설악밸리" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 신평골길 8-25</span><span class="hr">공통 · 체크인 15:00 · 체크아웃 11:00 · 레이크사이드 산책로 07:00~20:00</span></li>
+    <li><span class="nm">속초 중앙시장 · 만석닭강정</span><a href="https://map.naver.com/p/search/속초관광수산시장" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 중앙로147번길 12</span><span class="hr">공통 · 장보기 · 만석닭강정 09:00~20:00</span></li>
+    <li><span class="nm">백촌막국수</span><a href="https://map.naver.com/p/search/백촌막국수" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 백촌1길 10</span><span class="hr">휴식 · 자연 · 10:30~17:30 · 수요일 휴무 · 테이블링 대기</span></li>
+    <li class="alt"><span class="nm">동루골막국수 (대체)</span><a href="https://map.naver.com/p/search/동루골막국수" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 · 백촌막국수 인근</span><span class="hr">백촌 대기 2시간 넘으면</span></li>
+    <li><span class="nm">바다정원</span><a href="https://map.naver.com/p/search/고성 바다정원" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 버리깨길 23</span><span class="hr">휴식 · 평일 10:00~21:00 · 1층 베이커리, 3층 전망대 · 무료 주차</span></li>
+    <li><span class="nm">척산온천휴양촌</span><a href="https://map.naver.com/p/search/척산온천휴양촌" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 노학동</span><span class="hr">휴식 · 켄싱턴 제휴 사우나 · 사우나 05:30~20:00 · 노천탕 08:30~19:00</span></li>
+    <li><span class="nm">봉포머구리집 고성점</span><a href="https://map.naver.com/p/search/봉포머구리집 고성점" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 천진해변길 46</span><span class="hr">휴식 · 10:00~21:00 · 수요일 휴무</span></li>
+    <li><span class="nm">글라스하우스</span><a href="https://map.naver.com/p/search/고성 글라스하우스" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 천진해변길 43</span><span class="hr">휴식 · 카페 · 천진해변 주차장 이용</span></li>
+    <li><span class="nm">화암사 · 성인대(신선대)</span><a href="https://map.naver.com/p/search/고성 화암사" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 화암사길 100</span><span class="hr">자연 · 왕복 약 2시간 · 울산바위 정면 뷰</span></li>
+    <li><span class="nm">김영애할머니순두부</span><a href="https://map.naver.com/p/search/김영애할머니순두부 본점" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 노학동 · 학사평 순두부마을</span><span class="hr">자연 · 07:00~14:00 · 화요일 휴무</span></li>
+    <li><span class="nm">설악산 소공원 · 신흥사 · 비선대</span><a href="https://map.naver.com/p/search/설악산 소공원" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 설악산로 1085</span><span class="hr">자연 · 비선대 왕복 6.4km · 만차 시 B · C지구 주차 후 무료 셔틀</span></li>
+    <li class="alt"><span class="nm">권금성 케이블카 (선택)</span><a href="https://map.naver.com/p/search/설악산 케이블카" target="_blank" rel="noopener">[지도]</a><span class="ad">설악산 소공원 안</span><span class="hr">왕복 16,000원 · 현장 발권 · 탑승 시간 배정 · 강풍 · 안개 시 운휴</span></li>
+    <li><span class="nm">청초수물회 속초본점</span><a href="https://map.naver.com/p/search/청초수물회 속초본점" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 엑스포로 12-36</span><span class="hr">자연 · 액티비티 · 10:00~20:50</span></li>
+    <li><span class="nm">88생선구이</span><a href="https://map.naver.com/p/search/속초 88생선구이" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 중앙부두길 71</span><span class="hr">액티비티 · 08:00~20:15 (브레이크 15:00~16:30) · 예약 불가</span></li>
+    <li><span class="nm">고고비치서프</span><a href="https://map.naver.com/p/search/고고비치서프" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 죽왕면 자작도선사길 82 · 자작도해변</span><span class="hr">액티비티 · 비수기 강습 10:00 / 14:00 · 033-633-8088</span></li>
+    <li><span class="nm">갈매기배낚시 (낙산항)</span><a href="https://map.naver.com/p/search/낙산항 갈매기배낚시" target="_blank" rel="noopener">[지도]</a><span class="ad">양양군 강현면 낙산사로 43</span><span class="hr">액티비티 · 가자미 2시간 30분 · 1인 30,000원 · 010-5647-4747</span></li>
+    <li class="alt"><span class="nm">설악워터피아 (우천 대체)</span><a href="https://map.naver.com/p/search/설악워터피아" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 미시령로2983번길 111</span><span class="hr">주간권 56,000원 · 오후권(15:00~) 47,500원</span></li>
   </ul>
 </section>
 
 <footer class="prompt">
   <div class="line">C:\GANGWON><span class="cursor">_</span></div>
-  <p class="meta">REV 3 · 2026.09.23 · 일정이 바뀌면 이 주소 그대로 갱신됩니다</p>
+  <p class="meta">REV 4 · 2026.09.23 · 일정이 바뀌면 이 주소 그대로 갱신됩니다</p>
 </footer>
 
 </main>
