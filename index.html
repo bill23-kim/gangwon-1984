@@ -209,6 +209,7 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
   .menubar .brand,.menubar .clock{display:none}
   .menubar .in{justify-content:center}
   .menubar a{padding:4px 5px;font-size:14px}
+  .menubar a b{display:none}
   .skin{flex-basis:100%;justify-content:center;margin-left:0;padding:2px 0 6px}
   .win{padding:22px 12px 14px}
   [data-skin="gallery"] .win,[data-skin="midnight"] .win{padding:18px 16px 16px}
@@ -228,8 +229,9 @@ i.a,i.b{font-style:normal} i.a{color:var(--car-a)} i.b{color:var(--car-b)}
     <a href="#roster" data-key="2"><b>2</b> 인원</a>
     <a href="#day1" data-key="3"><b>3</b> 1일차</a>
     <a href="#day2" data-key="4"><b>4</b> 2일차</a>
-    <a href="#check" data-key="5"><b>5</b> 체크</a>
-    <a href="#places" data-key="6"><b>6</b> 장소</a>
+    <a href="#planb" data-key="5"><b>5</b> B안</a>
+    <a href="#check" data-key="6"><b>6</b> 체크</a>
+    <a href="#places" data-key="7"><b>7</b> 장소</a>
     <label class="skin"><span class="skin-lab">THEME</span>
       <select id="skin" aria-label="화면 테마 선택">
         <option value="hitel">PC통신</option>
@@ -320,12 +322,23 @@ CONNECT 14400/ARQ/V42BIS
   <ol class="tl">
     <li><time>08:00</time><span class="ev">라면 아침 · 짐 정리</span><span class="memo">객실 주방 사용</span></li>
     <li><time>09:00</time><span class="ev">체크아웃 · 설악산 소공원 이동</span><span class="memo">리조트에서 10분. 정식 체크아웃은 11시지만 일찍 나가는 게 유리</span></li>
-    <li><time>09:20</time><span class="ev">권금성 케이블카</span><span class="memo">왕복 15,000원 · 현장 구매만 가능 · 오전 9~11시가 한산하고 전망도 좋음</span></li>
+    <li><time>09:20</time><span class="ev">권금성 케이블카</span><span class="memo">왕복 16,000원 · 현장 구매만 가능, 탑승 시간 배정 · 오전 9~11시가 한산하고 전망도 좋음</span></li>
     <li><time>11:30</time><span class="ev">봉포머구리집 고성점 · 물회</span><span class="memo">글라스하우스 바로 맞은편. 토요일 점심이라 11시 반 도착 목표</span></li>
     <li><time>13:00</time><span class="ev">귀가 출발</span><span class="memo">토요일 오후 서울 방향 정체 전에 빠져나옴</span></li>
     <li><time>15:30</time><span class="ev">하남 · 판교 도착 예정</span></li>
   </ol>
   <p class="tip"><b>* 단풍</b> 설악산 단풍 절정이 10월 중순. 딱 이 주말이다.</p>
+</section>
+
+<section class="win" id="planb" aria-labelledby="t-planb">
+  <h2 class="win-title" id="t-planb" data-ko="플랜 B"><span class="fn">PLANB.BAT</span></h2>
+  <ol class="tl">
+    <li><time>11:45</time><span class="ev">백촌막국수 대기 2시간 넘으면</span><span class="memo">근처 동루골막국수로 전환</span></li>
+    <li><time>16:00</time><span class="ev">1일차 비 와서 산책 못 하면</span><span class="memo">척산온천 사우나 · 리조트에서 차로 15분 안팎 · 05:30~20:00</span></li>
+    <li><time>18:00</time><span class="ev">바베큐 불가 (비 · 그릴 없음)</span><span class="memo">14:30 장볼 때 고기 대신 회 · 닭강정 사서 실내 파티. 나가 먹을 거면 학사평 순두부마을</span></li>
+    <li><time>09:20</time><span class="ev">2일차 케이블카 운휴 · 탑승 배정이 10:30 이후</span><span class="memo">소공원에서 평지 10분 신흥사 · 통일대불 산책. 비까지 오면 척산온천 들렀다 물회</span></li>
+  </ol>
+  <p class="tip"><b>* 케이블카</b> 강풍 · 안개면 바로 멈춘다. 2일차 아침 설악케이블카 홈페이지 첫 화면에서 당일 운행 여부부터 확인.</p>
 </section>
 
 <section class="win" id="check" aria-labelledby="t-check">
@@ -355,14 +368,16 @@ CONNECT 14400/ARQ/V42BIS
     <li><span class="nm">봉포머구리집 고성점</span><a href="https://map.naver.com/p/search/봉포머구리집 고성점" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 천진해변길 46</span><span class="hr">10:00~21:00 · 수요일 휴무</span></li>
     <li><span class="nm">속초 중앙시장</span><a href="https://map.naver.com/p/search/속초관광수산시장" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 중앙로147번길 12</span><span class="hr">닭강정 · 술안주 · 장보기</span></li>
     <li><span class="nm">켄싱턴리조트 설악밸리</span><a href="https://map.naver.com/p/search/켄싱턴리조트 설악밸리" target="_blank" rel="noopener">[지도]</a><span class="ad">고성군 토성면 신평골길 8-25</span><span class="hr">체크인 15:00 · 체크아웃 11:00</span></li>
-    <li><span class="nm">설악산 소공원 · 권금성 케이블카</span><a href="https://map.naver.com/p/search/설악산 케이블카" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 설악산로 1085</span><span class="hr">왕복 15,000원 · 현장 구매</span></li>
+    <li><span class="nm">설악산 소공원 · 권금성 케이블카</span><a href="https://map.naver.com/p/search/설악산 케이블카" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 설악산로 1085</span><span class="hr">왕복 16,000원 · 현장 구매 · 강풍 · 안개 시 운휴</span></li>
+    <li class="alt"><span class="nm">신흥사 · 통일대불 (대체)</span><a href="https://map.naver.com/p/search/설악산 신흥사" target="_blank" rel="noopener">[지도]</a><span class="ad">설악산 소공원 안 · 입구에서 평지 도보 10분</span></li>
+    <li class="alt"><span class="nm">척산온천휴양촌 (우천 대체)</span><a href="https://map.naver.com/p/search/척산온천휴양촌" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 노학동</span><span class="hr">사우나 05:30~20:00 · 노천탕 08:30~19:00</span></li>
     <li class="alt"><span class="nm">학사평 순두부마을 (대체 저녁)</span><a href="https://map.naver.com/p/search/학사평 순두부마을" target="_blank" rel="noopener">[지도]</a><span class="ad">속초시 학사평 일대 · 리조트에서 10분</span></li>
   </ul>
 </section>
 
 <footer class="prompt">
   <div class="line">C:\GANGWON><span class="cursor">_</span></div>
-  <p class="meta">REV 2 · 2026.09.21 · 일정이 바뀌면 이 주소 그대로 갱신됩니다</p>
+  <p class="meta">REV 3 · 2026.09.23 · 일정이 바뀌면 이 주소 그대로 갱신됩니다</p>
 </footer>
 
 </main>
@@ -409,7 +424,7 @@ CONNECT 14400/ARQ/V42BIS
   btns.forEach(function(b){ b.addEventListener('click', function(){ st[b.id]=!st[b.id]; try{ localStorage.setItem(KEY, JSON.stringify(st)); }catch(e){} paint(); }); });
   paint();
 
-  // number keys 1-6 jump to sections
+  // number keys 1-7 jump to sections
   document.addEventListener('keydown', function(e){
     if(e.metaKey||e.ctrlKey||e.altKey||e.target===sel) return;
     var a = document.querySelector('.menubar a[data-key="'+e.key+'"]'); if(!a) return;
